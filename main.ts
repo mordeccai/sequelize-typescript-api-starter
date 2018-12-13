@@ -1,4 +1,6 @@
 import "universal-dotenv"
+import 'express-async-errors';
+import 'express-router-group';
 import 'server';
 import db from 'database';
 import chalk from 'chalk';
@@ -8,4 +10,4 @@ db.sync({ alter: true }).then(()=>{
 	console.log(chalk.green("Database connection successful"));
 }).catch((e)=>{
 	console.error(chalk.red(e));
-})
+});

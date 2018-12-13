@@ -2,6 +2,7 @@ import {Request, Response} from 'express';
 import { User } from 'app/models';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import event from 'app/events';
 
 export class AuthController {
     static async login(req: Request, res: Response){
@@ -36,11 +37,12 @@ export class AuthController {
 
     static async signup(req: Request, res: Response){
         const { full_name, email, password } = req.body;
-        await User.create({
+        const user = await User.create({
             full_name,
             email,
             password
         })
+        event.emit('new:user', user)
         return res.status(200).json({
             success: true,
             message: 'Signup successful'
