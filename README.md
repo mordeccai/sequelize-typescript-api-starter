@@ -1,4 +1,4 @@
 # sequelize-typescript-api-starter
 An api starter kit for sequelize-typescript
 
-For use in Typesque Flamework
+For use in Typesque Framework
