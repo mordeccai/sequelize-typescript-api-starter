@@ -1,7 +1,5 @@
 import {Request, Response} from 'express';
 import { User } from 'app/models';
-import chalk from 'chalk';
-declare var lest: any;
 
 export class UserController {
     static async index(req: Request, res: Response){
@@ -51,7 +49,6 @@ export class UserController {
 
     static async destroy(req: Request, res: Response){
         const { user } = res.locals;
-        lest();
         res.status(200).json({
             success: true,
             message: "User deleted successfuly"

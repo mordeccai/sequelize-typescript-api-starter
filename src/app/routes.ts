@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import { UserController, AuthController } from 'app/controllers';
 import { findUser, auth } from 'app/middlewares';
-import chalk from 'chalk';
 
 const router:any = Router();
 
