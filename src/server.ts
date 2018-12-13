@@ -1,7 +1,7 @@
 import * as bodyParser from 'body-parser';
 import express from 'express';
 import apiRoutes from 'app/routes';
-import "universal-dotenv"
+import chalk from 'chalk';
 
 const app = express();
 const port = process.env.PORT || 3030;
@@ -27,5 +27,5 @@ app.use('**', (req, res)=>{
 });
 
 app.listen(port, ()=>{
-    console.log(`Listening on port ${ port }`);
+    console.log(chalk.green(`Listening on port ${ port }`));
 })

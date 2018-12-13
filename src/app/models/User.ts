@@ -13,9 +13,6 @@ class User extends Model<User> {
     email: string
 
     @Column
-    age: string
-    
-    @Column
     password: string
 
     @CreatedAt

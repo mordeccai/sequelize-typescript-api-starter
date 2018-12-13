@@ -1,5 +1,3 @@
-import "universal-dotenv";
-
 export default ({
     database: process.env.DB_DATABASE,
     username: process.env.DB_USER,

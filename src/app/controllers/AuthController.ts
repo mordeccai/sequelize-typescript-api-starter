@@ -2,7 +2,6 @@ import {Request, Response} from 'express';
 import { User } from 'app/models';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import "universal-dotenv"
 
 export class AuthController {
     static async login(req: Request, res: Response){

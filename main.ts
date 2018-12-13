@@ -1,9 +1,11 @@
+import "universal-dotenv"
+import 'server';
 import db from 'database';
-import './src/server';
+import chalk from 'chalk';
 
 // Connect to database and sync
 db.sync({ alter: true }).then(()=>{
-	console.log("\x1b[32m", "Database connection successful");
+	console.log(chalk.green("Database connection successful"));
 }).catch((e)=>{
-	console.error("\x1b[31m", e);
+	console.error(chalk.red(e));
 })

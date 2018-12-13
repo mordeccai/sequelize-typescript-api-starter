@@ -4,8 +4,7 @@
   "description": "An api starter kit with typescript and sequelize",
   "main": "main.ts",
   "scripts": {
-    "start": "cross-env NODE_PATH=./src ts-node main.ts",
-    "migration:run": "cross-env NODE_PATH=./src ts-node src/database/migration.ts"
+    "start": "cross-env NODE_PATH=./src ts-node main.ts"
   },
   "author": "Tito Mordeccai",
   "license": "ISC",
@@ -14,6 +13,8 @@
     "@types/node": "^10.12.10",
     "@types/sequelize": "^4.27.32",
     "bcrypt": "^3.0.2",
+    "chalk": "^2.4.1",
+    "colors": "^1.3.3",
     "crypto-js": "^3.1.9-1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
@@ -25,7 +26,7 @@
     "reflect-metadata": "^0.1.12",
     "sequelize": "^4.41.2",
     "sequelize-typescript": "^0.6.6",
-    "tspath": "^1.3.7",
+    "typescript": "^3.2.2",
     "universal-dotenv": "^1.9.1"
   },
   "devDependencies": {
