@@ -1,10 +1,23 @@
 import { Sequelize } from 'sequelize-typescript';
 import dbConfig from 'config/database';
-import { User } from 'app/models';
+import { User, Country } from 'app/models';
+import fs from 'fs';
+import chalk from 'chalk';
+import seed from 'database/seeder';
 
 const db = new Sequelize(dbConfig);
+
+
 db.addModels([
-    User
+    Country,
+    User,
 ])
+
+export const seedDatabase = async () => {
+    seed(db, [
+        "tbl_countries",
+        
+    ])
+}
 
 export default db;

@@ -1,2 +1,4 @@
 import User from './User';
-export { User };
+import Country from './Country';
+
+export { User, Country};

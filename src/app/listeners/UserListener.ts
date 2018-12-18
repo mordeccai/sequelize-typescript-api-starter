@@ -1,9 +1,12 @@
 import { User } from "app/models";
-import chalk from "chalk";
+import { sendSMS } from "app/helpers";
 
 class UserListener {
     static async register(user: User){
-        console.log(chalk.blue('NEW USER ADDED'), user.toJSON())
+        const firstName = user.full_name.split(' ')[0];
+        const phoneNumber = user.phone_number;
+        let message = `Hi ${firstName}, we are glad you registered to ${process.env.APP_NAME}. We will use this phone number to contact you for verification.`;
+        await sendSMS([phoneNumber], message);
     }
 }
 

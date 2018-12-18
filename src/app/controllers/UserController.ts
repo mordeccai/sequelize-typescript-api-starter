@@ -17,10 +17,8 @@ export class UserController {
             email,
             password
         })
-        const { user: currentUser } = res.locals.auth
         return res.status(200).json({
             success: true,
-            currentUser,
             message: "User added successfuly"
         })
     }
@@ -48,11 +46,11 @@ export class UserController {
     }
 
     static async destroy(req: Request, res: Response){
-        const { user } = res.locals;
+        //const { user } = res.locals;
         res.status(200).json({
             success: true,
             message: "User deleted successfuly"
         })
     }
-
+    
 }

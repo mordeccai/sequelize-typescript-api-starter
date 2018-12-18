@@ -7,7 +7,7 @@ import exceptionHandler from 'app/exceptions/handler';
 const app = express();
 const port = process.env.PORT || 3030;
 
-// Configure express midlewares
+// Configure express middlewares
 app.use(require('helmet')());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
