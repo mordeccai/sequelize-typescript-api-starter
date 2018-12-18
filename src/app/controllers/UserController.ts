@@ -46,7 +46,8 @@ export class UserController {
     }
 
     static async destroy(req: Request, res: Response){
-        //const { user } = res.locals;
+        const { user } = res.locals;
+        user.destroy()
         res.status(200).json({
             success: true,
             message: "User deleted successfuly"

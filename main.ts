@@ -9,7 +9,7 @@ import chalk from 'chalk';
 
 // Database syncing options
 const syncOptions: SyncOptions = {
-	force: true,
+	alter: true,
 }
 
 // Connect to database and sync

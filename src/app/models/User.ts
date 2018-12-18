@@ -1,10 +1,11 @@
-import { Model, Table, Column, UpdatedAt, CreatedAt, BeforeUpdate, BeforeCreate, HasOne, ForeignKey, BelongsTo, DataType } from 'sequelize-typescript';
+import { Model, Table, Column, UpdatedAt, CreatedAt, BeforeUpdate, BeforeCreate, HasOne, ForeignKey, BelongsTo, DataType, DeletedAt } from 'sequelize-typescript';
 import bcrypt from 'bcrypt'
 import { Country } from 'app/models';
 
 @Table({
     timestamps: true,
     tableName: "users",
+    deletedAt: true
 })
 class User extends Model<User> {
     @Column
@@ -41,11 +42,16 @@ class User extends Model<User> {
     @UpdatedAt
     updated_at: Date;
 
+    @DeletedAt
+    deleted_at: Date;
+
     @BeforeUpdate
     @BeforeCreate
     static async hashPassword(instance: User) {
         instance.password = await bcrypt.hash(instance.password, 10); 
     }
+
+
     
 
     @BelongsTo(() => Country)
