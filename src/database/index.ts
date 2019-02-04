@@ -15,8 +15,6 @@ db.addModels([
 
 export const seedDatabase = async () => {
     seed(db, [
-        "tbl_countries",
-        
     ])
 }
 

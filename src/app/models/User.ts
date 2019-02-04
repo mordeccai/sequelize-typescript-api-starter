@@ -4,8 +4,7 @@ import { Country } from 'app/models';
 
 @Table({
     timestamps: true,
-    tableName: "users",
-    deletedAt: true
+    tableName: "users"
 })
 class User extends Model<User> {
     @Column

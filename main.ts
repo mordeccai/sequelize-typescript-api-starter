@@ -1,3 +1,4 @@
+import "module-alias/register";
 import "universal-dotenv"
 import 'express-async-errors';
 import 'express-router-group';
@@ -9,7 +10,7 @@ import chalk from 'chalk';
 
 // Database syncing options
 const syncOptions: SyncOptions = {
-	alter: true,
+	alter: false,
 }
 
 // Connect to database and sync
